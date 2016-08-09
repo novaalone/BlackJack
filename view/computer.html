@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Jack</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <script src="../js/computer.js"></script>
+    <script src="../js/bmob-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/flat-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/cardStyle.css">
+</head>
+<body>
+<script>
+    Bmob.initialize("691a27668610541ff8a6cf59b263784a", "559c7ded8d17ba7de33638d714d3c1ae");
+    var currentUser = Bmob.User.current();
+    if (currentUser) {
+        // do stuff with the user
+        currentUser.set("state","off");
+        currentUser.save();
+    }
+</script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="text-left">
+            <button id = "btn_restart" class="btn btn-primary">Restart</button>
+        </div>
+        <div class="text-right">
+            <p id="computer_score"></p>
+            <p id="person_score"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div id="computer">
+            <div class="row">
+                <div id="computer_display"></div>
+            </div>
+        </div>
+    </div>
+    <h3 id="result" class="tile-title"></h3>
+    <div class="row">
+        <div id="person">
+            <div class="row">
+
+                <div id="person_display"></div>
+            </div>
+
+            <button id="person_stand" class="btn btn-default btn-danger">Stand</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

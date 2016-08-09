@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <script src="../js/login.js"></script>
+    <script src="../js/bmob-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/flat-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/cardStyle.css">
+</head>
+<body>
+<script>
+Bmob.initialize("691a27668610541ff8a6cf59b263784a", "559c7ded8d17ba7de33638d714d3c1ae");
+//使用localStorage，不用每次都登陆
+var currentUser = Bmob.User.current();
+if (currentUser) {
+    // do stuff with the user
+    window.location.href="start.html";
+} else {
+    // show the signup or login page
+}
+</script>
+
+        <div class="login-form">
+                <div class="control-group">
+                <input type="text" class="login-field" id="username" placeholder="username">
+                <label class="login-field-icon fui-user" for="username"></label>
+                    </div>
+
+
+            <div class="control-group">
+                <input type="password" class="login-field" id="password" placeholder="password">
+                <label class="login-field-icon fui-lock" for="password"></label>
+                </div>
+
+
+            <button id="login" class="btn btn-primary btn-block">Login</button>
+            <button id="register" class="btn btn-primary btn-block">Register</button>
+        </div>
+
+
+
+</body>
+</html>
